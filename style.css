@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 10rem;
+    /* background: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 3.2rem;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+}
+
+.navigation a {
+    /* Used so that we can position the pseudo-element */
+    position: relative;
+    /* ============================================== */
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 4rem;
+}
+
+/* Creating a pseudo-element to the anchor links instead of text decoration underline property */
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.6rem;
+    width: 100%;
+    height: 0.3rem ;
+    background: #fff;
+    border-radius: 0.5rem;
+    /* Transform property hides the pseudo-element */
+    transform: scaleX(0);
+    /* =========================================== */
+    transform-origin: right;
+    transition: transform .5s;
+}
+/* Take note there should be no space between the :hover and ::after selectors, if there is a space, the hover effect wont work */
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navigation .btnLogin-popup {
+    width: 13rem;
+    height: 5rem;
+    background: transparent;
+    border: 0.2rem solid #fff;
+    outline: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 4rem;
+    transition: .59s ease-in-out;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+/* ================================ */
+/* Second Level Design */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.6)), */
+    background: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wrapper {
+    border: 2px solid rgba(255,255,255,0.5);
+    position: relative;
+    width: 40rem;
+    height: 44rem;
+    background: transparent;
+    border-radius: 2rem;
+    backdrop-filter: blur(2rem);
+    box-shadow: 0 0 3rem rgba(0,0,0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .form-box {
+    border: 1px solid red;
+    width: 100%;
+    padding: 4rem; 
+}
