@@ -21,3 +21,13 @@ btnLoginPopup.addEventListener('click', ()=>{
 iconClosse.addEventListener('click', ()=>{
     wrapper.classList.remove("active-popup");
 });
+
+// Mobile responsive?? 
+const mobileMenu = document.querySelector(".menu-icon");
+const mobileLink = document.querySelector('nav');
+
+console.log (mobileMenu);
+
+mobileMenu.addEventListener('click', ()=> {
+    mobileLink.classList.toggle('showMenu');
+})

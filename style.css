@@ -83,6 +83,12 @@ header {
     color: #162938;
 }
 
+.menu-icon ion-icon {
+    color: #fff;
+    font-size: 2.4rem;
+    display: none;
+}
+
 /* ================================ */
 /* Second Level Design */
 
@@ -320,4 +326,70 @@ ion-icon {
 
 .wrapper.active-popup {
     transform: scale(1);
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        /* border: 1px solid red; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        padding: 0 10rem;
+    }
+
+    .logo-container {
+        /* border: 1px solid yellow; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-icon ion-icon {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        backdrop-filter: blur(3rem);
+        width: 100%;
+        justify-content: center;
+        align-items: end;
+        padding: 0.5rem;
+        border: 0.2rem solid whitesmoke;
+        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border-top: none;
+
+    }
+
+    .navigation .btnLogin-popup {
+        width: 4.5rem;
+        height: 3rem;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-radius: none;
+        cursor: pointer;
+        font-size: 1.6rem;
+        color: #fff;
+        font-weight: 500;
+        margin-left: 0.4rem;
+        transition: .59s ease-in-out;
+    }
+    
+    .navigation .btnLogin-popup:hover {
+        background: #fff;
+        color: #162938;
+    }
+
+    body {
+        padding-top: 25rem;
+        /* padding-right: 13rem; */
+    }
+
+    .showMenu {
+        display: flex;
+    }
 }
