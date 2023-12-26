@@ -91,7 +91,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(./images/background.jpg);
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7)), url(./images/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -220,7 +220,7 @@ ion-icon {
 .login-register {
     /* border: 1px solid red; */
     font-size: 1rem;
-    color: #162938;
+    color: #60707c;
     text-align: center;
     font-weight: 500;
     margin: 2.5rem 0 1rem;
