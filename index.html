@@ -20,34 +20,74 @@
     </header>
 
     <div class="wrapper">
-        <div class="form-box">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <!-- The login side of the form  -->
+        <div class="form-box login">
             <h2>Login</h2>
-            <form action="">
+            <form action="#">
                 <div class="input-box">
-                    <span class="icon"><box-icon type='solid' name='envelope' size="sm"></box-icon></psan>
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
                     <input type="email" required>
                     <label>Email</label>
                 </div>
 
                 <div class="input-box">
-                    <span class="icon"><box-icon type='solid' name='lock-alt' size="sm"></box-icon></psan>
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" required>
                     <label>Password</label>
                 </div>
                 
                 <div class="remember-forgot">
-                    <input type="checkbox">
-                    <label>Remember me</label>
+                    <label><input type="checkbox">Remember me</label>
                     <a href="#">Forgot Password</a>
                 </div>
 
-                <btn type="submit" class="btn">Login</btn>
+                <button type="submit" class="btn">Login</button>
 
                 <div class="login-register">
-                    <p>Dont have an account?<a href="" class="register-link">Register</a></p>
+                    <p>Don't have an account?</p>
+                    <p class="register-link" >Register</p>
                 </div>
             </form>
         </div>
+
+        <!-- The register side of the form -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms & conditions</label>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+
+                <div class="login-register">
+                    <p> Already have an account?</p>
+                    <p class="login-link" >Login</p>
+                </div>
+            </form>
+        </div>
+
     </div>
 
 
@@ -55,8 +95,9 @@
 
     <!-- Adding the JavaScript External File Tag -->
     <script src="./app.js"></script>
-    <!-- Adding the Box Icon Script Tag -->
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- Adding the Box Icon Script Tag From ionicons.io rather than boxicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>

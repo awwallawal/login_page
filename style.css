@@ -106,14 +106,219 @@ body {
     background: transparent;
     border-radius: 2rem;
     backdrop-filter: blur(2rem);
-    box-shadow: 0 0 3rem rgba(0,0,0, 0.5);
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+ion-icon {
+    font-size: 1.6rem;
+}
+
 .wrapper .form-box {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;
     padding: 4rem; 
+}
+
+.form-box h2 {
+    font-size: 2.4rem;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    border-bottom: 0.2rem solid #162938;
+    margin: 3rem 0 ;
+}
+
+.input-box label {
+    font-size: 1.6rem;
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Jumping of the label transitioning */
+    transition: .5s;
+}
+
+
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 3.5rem 0 0.5rem;
+}
+
+.input-box .icon {
+    /* border: 1px solid green; */
+    position: absolute;
+    right: 0.8rem;
+    font-size: 1.2rem;
+    color: #162938;
+    line-height: 5.7rem;
+}
+
+/* ========= Make the label jump on click */
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -0.5rem;
+}
+/* ========= Make the label jump on click */
+
+.remember-forgot {
+    font-size: 1rem;
+    color: #162938;
+    font-weight: 500;
+    margin: -0.15rem 0 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 0.3rem;
+}
+
+.remember-forgot label, .remember-forgot input, .remember-forgot a {
+    font-size: 1.4rem;
+}
+
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 4.5rem;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.login-register {
+    /* border: 1px solid red; */
+    font-size: 1rem;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 2.5rem 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-register p {
+    font-size: 1.4rem;
+    font-weight: 600
+}
+
+.login-link:hover, .register-link:hover {
+    text-decoration: underline;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Working on the close button icon */
+
+.wrapper .icon-close {
+    position:absolute;
+    top:0;
+    right: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: #162938;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Used to give the close button the curved edge look */
+    border-bottom-left-radius: 2rem;
+    /* ================================================== */
+    cursor: pointer;
+    z-index: 1;
+     
+}
+
+/* Used this to give the close button the curved edge look */
+.wrapper {
+    overflow: hidden;
+}
+
+.wrapper .icon-close ion-icon {
+    font-size: 2.4rem;
+}
+
+/* End of the Login Side and Begining of the Registration Side */
+
+/* When a tag has multiple classes attached, in order to specifically use those properties in CSS don't put a space in the multiple classes selectors i.e. .form-box .login won't work */
+.wrapper .form-box.login {
+    /* display: none; */
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .form-box.register{
+    position: absolute;
+    transform: translateX(40rem);
+}
+
+/* Controling events on clicking the Register and Login tags with JavaScript */
+.wrapper.active {
+    height: 52rem;
+}
+
+.wrapper {
+    transition: height .2s ease;
+}
+/* Grabbing hold of the wrapper once the active classList is added of the .form-box.login alone and not the .form-box.register(brilliant) */
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-40rem);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(40rem);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+/* Making the Login button in the NavLink popup the wrapper.Remember the wrapper has been set to  transform: scale(0)*/
+.wrapper {
+    /* This is done to remove the login panel so that we can use the login button in the navigation link for control via JavaScript */
+    transform: scale(0);
+    /* Make the transition smooth on clicking the NavLink Login button */
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
 }
